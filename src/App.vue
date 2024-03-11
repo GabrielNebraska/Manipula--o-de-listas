@@ -1,13 +1,30 @@
 <script setup>
-const items = [
-  { id: '1', name: 'item1' },
-  { id: '2', name: 'item2' },
-  { id: '3', name: 'item3' }
-]
+  import { ref } from 'vue'
+
+  const Cidades = ref([
+  {cidade: 'São Paulo', pais: 'Brasil'},
+  {cidade:'Rio de Janeiro', pais: 'Brasil'},
+  {cidade:'Belo Horizonte', pais: 'Brasil'},
+  {cidade:'Salvador', pais: 'Brasil'},
+  {cidade:'Fortaleza', pais: 'Brasil'},
+  {cidade:'Curitiba', pais: 'Brasil'},
+  {cidade:'Manaus', pais: 'Brasil'},
+  {cidade:'Recife', pais: 'Brasil'},
+  {cidade:'Porto Alegre', pais: 'Brasil'},
+  {cidade:'Brasília', pais: 'Brasil'}
+]);
+
+
 </script>
 <template>
-  <div v-for="item in items" :key="item.id">
-    {{ item.name }}>
-    <p>{{ item.name }}</p>
-  </div>
+
+  <ul>
+    <li v-for="(cidade, index) in Cidades.value.sort()"> {{ cidade.value }} - {{ pais }}</li>
+  </ul>
+
 </template>
+
+<style>
+
+
+</style>
